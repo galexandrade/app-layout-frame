@@ -1,4 +1,4 @@
-import { LayoutFrame } from 'app-layout-frame';
+import { LayoutFrame, NavButton } from 'app-layout-frame';
 import {
     IconTachometer,
     IconMessages,
@@ -14,9 +14,11 @@ import {
     IconRepeat,
     IconCreditCard,
     IconCog,
-    IconFourDotsCircle
+    IconFourDotsCircle,
+    IconComment
 } from '@7shifts/sous-chef';
 import { NavBarItems } from 'app-layout-frame/dist/layout/types';
+import { Outlet } from 'react-router-dom';
 
 const NAV_ITEMS: NavBarItems = [
     {
@@ -136,8 +138,26 @@ function App() {
             appLogo={<Logo />}
             companyLogoURL="https://media.istockphoto.com/id/1164466990/vector/digital-signage-pixel-icon-tech-element-vector-logo-icon-illustrator.jpg?s=612x612&w=0&k=20&c=tC_2Q7WSFbUUSDC7Nk9u-krFzDrWA4-aZjX3HI_8LoU="
             companyName="Clash Creative Marketing"
+            actions={[
+                <NavButton
+                    tooltipContent="Announcements"
+                    onClick={() => console.log()}
+                    key={0}
+                    badge={2}
+                >
+                    <IconMegaphone color="grey-400" />
+                </NavButton>,
+                <NavButton
+                    tooltipContent="Messages"
+                    onClick={() => console.log()}
+                    key={1}
+                    badge
+                >
+                    <IconComment color="grey-400" />
+                </NavButton>
+            ]}
         >
-            test
+            <Outlet />
         </LayoutFrame>
     );
 }

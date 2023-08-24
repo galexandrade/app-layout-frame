@@ -11,8 +11,10 @@ const NotificationBadge = ({ children }: Props): JSX.Element => {
     return (
         <span
             className={classNames(styles['notification-badge'], {
-                [styles['notification-badge--bullet']]: !children,
-                [styles['notification-badge--count']]: children
+                [styles['notification-badge--bullet']]:
+                    typeof children === 'boolean',
+                [styles['notification-badge--count']]:
+                    typeof children === 'number'
             })}
             data-testid="notification-badge"
         >

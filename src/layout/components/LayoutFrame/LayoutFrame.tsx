@@ -11,6 +11,7 @@ import TopBar from '../TopBar/TopBar';
 type Props = {
     navItems: NavBarItems;
     appLogo: React.ReactNode;
+    actions: React.ReactNode[];
     companyLogoURL: string;
     companyName: string;
     children?: React.ReactNode;
@@ -19,6 +20,7 @@ type Props = {
 const LayoutFrame = ({
     navItems,
     appLogo,
+    actions,
     companyLogoURL,
     companyName,
     children
@@ -91,6 +93,7 @@ const LayoutFrame = ({
                         <TopBar
                             companyLogoURL={companyLogoURL}
                             companyName={companyName}
+                            actions={actions}
                         />
                     </div>
                 )}

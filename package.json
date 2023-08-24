@@ -13,6 +13,7 @@
     },
     "scripts": {
         "build": "microbundle-crl --format modern,cjs",
+        "postbuild": "cp -r src/fonts dist",
         "start": "microbundle-crl watch --no-compress --format modern,cjs"
     },
     "peerDependencies": {

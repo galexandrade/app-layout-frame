@@ -1,0 +1,12 @@
+.storybook
+example
+node_modules
+scripts
+.eslintignore
+.eslintrc
+.gitignore
+.prettierrc
+tsconfig.json
+.vscode
+build-storybook.log
+coverage

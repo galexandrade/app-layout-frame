@@ -10,10 +10,19 @@ import TopBar from '../TopBar/TopBar';
 
 type Props = {
     navItems: NavBarItems;
+    appLogo: React.ReactNode;
+    companyLogoURL: string;
+    companyName: string;
     children?: React.ReactNode;
 };
 
-const LayoutFrame = ({ navItems, children }: Props) => {
+const LayoutFrame = ({
+    navItems,
+    appLogo,
+    companyLogoURL,
+    companyName,
+    children
+}: Props) => {
     const navRef = useRef<HTMLDivElement>(null);
     const isFullScreen = false;
     const [isExpanded, setIsExpanded] = useLocalStorage<boolean>(
@@ -66,6 +75,7 @@ const LayoutFrame = ({ navItems, children }: Props) => {
                         }
                         toggleExpand={toggleExpand}
                         navItems={navItems}
+                        appLogo={appLogo}
                     />
                 </div>
             )}
@@ -78,7 +88,10 @@ const LayoutFrame = ({ navItems, children }: Props) => {
             >
                 {!isFullScreen && (
                     <div className={styles['layout-frame__top-bar']}>
-                        <TopBar />
+                        <TopBar
+                            companyLogoURL={companyLogoURL}
+                            companyName={companyName}
+                        />
                     </div>
                 )}
                 <div className={styles['layout-frame__content']}>

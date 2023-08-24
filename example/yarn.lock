@@ -2725,10 +2725,10 @@ app-layout-frame@^0.0.1:
     "@7shifts/sous-chef" "^3.23.0"
     classnames "^2.3.2"
 
-app-layout-frame@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/app-layout-frame/-/app-layout-frame-0.0.5.tgz#1fdceba068081a0e54354e8f0e5aa96fcd0ffc00"
-  integrity sha512-f6egdVA5JVx3e+JXA58IzVAcm+iO4rcxioyu4qrvgRV2wVpBJ2W9kjBO8iykLk100LVP8EuuuKmmuLpGyoDWDg==
+app-layout-frame@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/app-layout-frame/-/app-layout-frame-0.0.7.tgz#977d9d4a38554cc48a29cb0b743bfb65b1a36aa7"
+  integrity sha512-ucTy3WDrg0Bzn91fRz9/9eDvfH8fgvssU5TE/hgmLuV2WIAQWMxtKSz/oJn3jLi/nlxBMVS9bdfTVxrquLoskg==
   dependencies:
     "@7shifts/sous-chef" "^3.23.0"
     app-layout-frame "^0.0.1"

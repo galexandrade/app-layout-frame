@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import './primary-nav-item.scss';
+import styles from './primary-nav-item.scss';
 import { Inline } from '@7shifts/sous-chef';
 
 type Props = {
@@ -11,8 +11,8 @@ type Props = {
 
 const PrimaryNavItem = ({ as = 'li', isActive = false, children }: Props) => {
     const props = {
-        className: classNames('primary-nav-item', {
-            'primary-nav-item--active': isActive
+        className: classNames(styles['primary-nav-item'], {
+            [styles['primary-nav-item--active']]: isActive
         })
     };
 

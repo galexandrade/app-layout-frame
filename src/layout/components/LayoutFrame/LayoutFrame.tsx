@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import classNames from 'classnames';
-import './layout-frame.scss';
+import styles from './layout-frame.scss';
 import useLocalStorage from '../../util/useLocalStorage';
 import { NAV_POSITION, NAV_SIZE } from '../../constants';
 import { isTouchscreen } from '../../util/mobileDetect';
@@ -34,16 +34,18 @@ const LayoutFrame = ({ sideNav, topBar, isLegacyPage, children }: Props) => {
 
     return (
         <div
-            className={classNames('layout-frame', {
-                'layout-frame--no-height': isLegacyPage
+            className={classNames(styles['layout-frame'], {
+                [styles['layout-frame--no-height']]: isLegacyPage
             })}
         >
             {isShowingSideMenu && (
                 <div
                     ref={navRef}
-                    className={classNames('layout-frame__side-bar', {
-                        'layout-frame__side-bar--expanded': isExpanded,
-                        'layout-frame__side-bar--collapsed': !isExpanded
+                    className={classNames(styles['layout-frame__side-bar'], {
+                        [styles['layout-frame__side-bar--expanded']]:
+                            isExpanded,
+                        [styles['layout-frame__side-bar--collapsed']]:
+                            !isExpanded
                     })}
                     onMouseEnter={() => {
                         !isTouchDevice && setIsHovering(true);
@@ -71,21 +73,24 @@ const LayoutFrame = ({ sideNav, topBar, isLegacyPage, children }: Props) => {
             )}
 
             <div
-                className={classNames('layout-frame__middle-area', {
-                    'layout-frame__middle-area--full-size': !isShowingSideMenu,
-                    'layout-frame__middle-area--no-footer-padding': isLegacyPage
+                className={classNames(styles['layout-frame__middle-area'], {
+                    [styles['layout-frame__middle-area--full-size']]:
+                        !isShowingSideMenu,
+                    [styles['layout-frame__middle-area--no-footer-padding']]:
+                        isLegacyPage
                 })}
             >
                 {!isFullScreen && (
                     <div
-                        className={classNames('layout-frame__top-bar', {
-                            'layout-frame__top-bar--hidden': isLegacyPage
+                        className={classNames(styles['layout-frame__top-bar'], {
+                            [styles['layout-frame__top-bar--hidden']]:
+                                isLegacyPage
                         })}
                     >
                         {topBar}
                     </div>
                 )}
-                <div className="layout-frame__content">
+                <div className={styles['layout-frame__content']}>
                     {children}
                     {!isLegacyPage && <div id="footer" />}
                 </div>

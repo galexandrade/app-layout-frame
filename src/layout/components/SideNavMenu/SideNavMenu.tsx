@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavItems } from '../../hooks/useNavItems';
-import './side-nav-menu.scss';
+import styles from './side-nav-menu.scss';
 import { NavBarItems } from '../../types';
 import SideNavMenuItemGroup from '../SideNavMenuItemGroup/SideNavMenuItemGroup';
 import SideNavMenuItem from '../SideNavMenuItem/SideNavMenuItem';
@@ -28,11 +28,14 @@ const SideNavMenuList = ({
     navItems
 }: SideNavMenuListProps) => {
     return (
-        <ul className="side-nav-menu">
+        <ul className={styles['side-nav-menu']}>
             {navItems.map((item, index) => {
                 if ('type' in item) {
                     return (
-                        <div key={index} className="side-nav-menu__divider" />
+                        <div
+                            key={index}
+                            className={styles['side-nav-menu__divider']}
+                        />
                     );
                 }
                 if ('items' in item) {

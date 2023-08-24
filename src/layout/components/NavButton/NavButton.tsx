@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tooltip } from '@7shifts/sous-chef';
-import './nav-button.scss';
+import styles from './nav-button.scss';
 
 type props = {
     children: React.ReactNode;
@@ -16,7 +16,7 @@ const NavButton = ({
     return (
         <Tooltip overlay={tooltipContent}>
             <button
-                className="nav-button"
+                className={styles['nav-button']}
                 tabIndex={0}
                 onClick={() => onClick()}
             >

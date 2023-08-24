@@ -7,7 +7,7 @@ import { useState } from 'react';
 import PrimaryNavItem from '../PrimaryNavItem';
 import SecondaryNavItem from '../SecondaryNavItem';
 import NotificationBadge from '../NotificationBadge';
-import './side-nav-menu-item-group.scss';
+import styles from './side-nav-menu-item-group.scss';
 
 type Props = {
     isExpanded: boolean;
@@ -31,7 +31,7 @@ const SideNavMenuItemGroup = ({ isExpanded, toggleExpand, item }: Props) => {
 
     const Icon = item.icon;
     return (
-        <li className="side-nav-menu-item-group">
+        <li className={styles['side-nav-menu-item-group']}>
             <Link
                 to={item.url || item.items[0].url}
                 key={label}
@@ -60,7 +60,7 @@ const SideNavMenuItemGroup = ({ isExpanded, toggleExpand, item }: Props) => {
                 </PrimaryNavItem>
             </Link>
             {isExpanded && hasActiveSubmenu && (
-                <ul className="side-nav-menu-item-group__submenu">
+                <ul className={styles['side-nav-menu-item-group__submenu']}>
                     {sortedNavBarItems.map((subMenuItem) => (
                         <Link
                             to={subMenuItem.url}

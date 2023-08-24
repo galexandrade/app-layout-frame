@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconChevronLeft, IconChevronRight, Inline } from '@7shifts/sous-chef';
-import './side-nav-bar.scss';
+import styles from './side-nav-bar.scss';
 import { NavPosition } from '../../types';
 import { isTouchscreen } from '../../util/mobileDetect';
 import { NAV_POSITION } from '../../constants';
@@ -28,18 +28,18 @@ const SideNavBar = ({
     */
 
     return (
-        <nav className="side-nav-bar">
-            <div className="side-nav-bar__header">
+        <nav className={styles['side-nav-bar']}>
+            <div className={styles['side-nav-bar__header']}>
                 <Inline alignItems="center" justifyContent="space-between">
                     {(!isTouchDevice || isExpanded) && (
-                        <div className="side-nav-bar__logo">
+                        <div className={styles['side-nav-bar__logo']}>
                             <Logo />
                         </div>
                     )}
                     {(isExpanded || isTouchDevice) && (
                         <button
                             onClick={toggleExpand}
-                            className="side-nav-bar__nav-toggle"
+                            className={styles['side-nav-bar__nav-toggle']}
                         >
                             {navPosition === NAV_POSITION.COLLAPSED ? (
                                 <IconChevronRight />

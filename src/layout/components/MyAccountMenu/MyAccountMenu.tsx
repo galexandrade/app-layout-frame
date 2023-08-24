@@ -5,11 +5,11 @@ import {
     DropdownList,
     DropdownListItem
 } from '@7shifts/sous-chef';
-import './my-account-menu.scss';
+import styles from './my-account-menu.scss';
 
 const MyAccountMenu = () => {
     const trigger = (
-        <div className="my-account-menu">
+        <div className={styles['my-account-menu']}>
             <Avatar
                 size="large"
                 url="https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg"

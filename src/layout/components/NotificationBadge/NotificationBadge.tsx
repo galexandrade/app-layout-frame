@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { ReactNode } from 'react';
-import './notification-badge.scss';
+import styles from './notification-badge.scss';
 
 type Props = {
     children?: ReactNode;
@@ -10,9 +10,9 @@ type Props = {
 const NotificationBadge = ({ children }: Props): JSX.Element => {
     return (
         <span
-            className={classNames('notification-badge', {
-                'notification-badge--bullet': !children,
-                'notification-badge--count': children
+            className={classNames(styles['notification-badge'], {
+                [styles['notification-badge--bullet']]: !children,
+                [styles['notification-badge--count']]: children
             })}
             data-testid="notification-badge"
         >

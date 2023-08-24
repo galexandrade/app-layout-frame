@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge, Chip } from '@7shifts/sous-chef';
 import classNames from 'classnames';
-import './secondary-nav-item.scss';
+import styles from './secondary-nav-item.scss';
 import { getBadgeContent } from '../../util/navDomain';
 
 type Props = {
@@ -21,13 +21,13 @@ const SecondaryNavItem = ({
     const hasBadge = typeof badge === 'number' && badge > 0;
     return (
         <li
-            className={classNames('secondary-nav-item', {
-                'secondary-nav-item--active': isActive,
-                'secondary-nav-item--no-icon': !icon
+            className={classNames(styles['secondary-nav-item'], {
+                [styles['secondary-nav-item--active']]: isActive,
+                [styles['secondary-nav-item--no-icon']]: !icon
             })}
         >
             {icon}
-            <div className="secondary-nav-item__content">
+            <div className={styles['secondary-nav-item__content']}>
                 {children}
                 {hasBadge && <Badge>{getBadgeContent(badge)}</Badge>}
                 {hasChip && <Chip>{badge}</Chip>}

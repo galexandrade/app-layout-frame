@@ -4,6 +4,7 @@ import { NavBarItem } from '../../types';
 import { Link } from 'react-router-dom';
 import PrimaryNavItem from '../PrimaryNavItem';
 import NotificationBadge from '../NotificationBadge';
+import { matchPath } from 'react-router';
 
 type Props = {
     isExpanded: boolean;
@@ -11,8 +12,10 @@ type Props = {
 };
 
 const SideNavMenuItem = ({ isExpanded, item }: Props) => {
-    const { url, label, isActive, badge } = item;
+    const { url, label, badge } = item;
     const Icon = item.icon;
+
+    const isActive = !!matchPath(window.location.pathname, url);
     return (
         <Link
             to={url}

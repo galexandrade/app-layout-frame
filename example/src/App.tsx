@@ -24,7 +24,7 @@ import { Outlet } from 'react-router-dom';
 
 const NAV_ITEMS: NavBarItems = [
     {
-        label: 'Dashboardd',
+        label: 'Dashboard',
         isActive: true,
         isShowing: true,
         url: '/dashboard',

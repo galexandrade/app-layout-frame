@@ -8,8 +8,16 @@ type Props = {
     companyLogoURL: string;
     companyName: string;
     actions: React.ReactNode[];
+    accountMenuDropdown: React.ReactNode;
+    userPrifileImageURL: string;
 };
-const TopBar = ({ companyLogoURL, companyName, actions }: Props) => {
+const TopBar = ({
+    companyLogoURL,
+    companyName,
+    actions,
+    accountMenuDropdown,
+    userPrifileImageURL
+}: Props) => {
     return (
         <div className={styles['top-bar']}>
             <div>
@@ -22,7 +30,10 @@ const TopBar = ({ companyLogoURL, companyName, actions }: Props) => {
                 <Inline space={12} alignItems="center">
                     {actions}
                 </Inline>
-                <MyAccountMenu />
+                <MyAccountMenu
+                    accountMenuDropdown={accountMenuDropdown}
+                    userPrifileImageURL={userPrifileImageURL}
+                />
             </Inline>
         </div>
     );

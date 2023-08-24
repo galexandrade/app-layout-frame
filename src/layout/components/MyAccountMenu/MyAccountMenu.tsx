@@ -1,30 +1,22 @@
 import React from 'react';
-import {
-    Avatar,
-    Dropdown,
-    DropdownList,
-    DropdownListItem
-} from '@7shifts/sous-chef';
+import { Avatar, Dropdown } from '@7shifts/sous-chef';
 import styles from './my-account-menu.scss';
 
-const MyAccountMenu = () => {
+type Props = {
+    accountMenuDropdown: React.ReactNode;
+    userPrifileImageURL: string;
+};
+
+const MyAccountMenu = ({ accountMenuDropdown, userPrifileImageURL }: Props) => {
     const trigger = (
         <div className={styles['my-account-menu']}>
-            <Avatar
-                size="large"
-                url="https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg"
-            />
+            <Avatar size="large" url={userPrifileImageURL} />
         </div>
     );
 
     return (
         <Dropdown trigger={trigger} triggersOn="hover" zIndex={6}>
-            <DropdownList>
-                <DropdownListItem href="/employees">
-                    My account
-                </DropdownListItem>
-                <DropdownListItem href="/employees">Log out</DropdownListItem>
-            </DropdownList>
+            {accountMenuDropdown}
         </Dropdown>
     );
 };

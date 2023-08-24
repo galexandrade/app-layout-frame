@@ -1,0 +1,9 @@
+.side-nav-menu-item-group {
+    &__submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        list-style: none;
+        margin-top: 12px;
+    }
+}

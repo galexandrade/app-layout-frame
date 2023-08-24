@@ -1,0 +1,22 @@
+.primary-nav-item {
+    padding: 10px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--color-grey-500);
+    cursor: pointer;
+    position: relative;
+    min-width: 40px;
+    box-sizing: border-box;
+
+    &--active {
+        background-color: var(--color-eggplant-100);
+        color: var(--color-eggplant-500);
+    }
+
+    &:hover:not(&--active) {
+        background-color: var(--color-grey-100);
+        color: var(--color-grey-500);
+    }
+}

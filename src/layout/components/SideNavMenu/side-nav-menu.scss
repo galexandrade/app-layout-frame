@@ -1,0 +1,65 @@
+/* stylelint-disable indentation */
+/* stylelint-disable declaration-block-no-duplicate-properties */
+
+/**
+ * This is for adding a shadow when the body is scrollable.
+ * Follow the approach on https://lea.verou.me/2012/04/background-attachment-local/
+ */
+
+// prettier-ignore
+@mixin scroll-shadow-covers () {
+    // prettier-ignore
+    background:
+		/* Shadow covers */
+		linear-gradient(white 30%, rgba(255 255 255 / 0%)),
+		linear-gradient(rgba(255 255 255 / 0%), white 70%) 0 100%,
+		/* Shadows */
+		radial-gradient(50% 0, farthest-side, rgba(0 0 0 / 20%), rgba(0 0 0 / 0%)),
+		radial-gradient(50% 100%, farthest-side, rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)) 0 100%;
+
+    // prettier-ignore
+    background:
+		/* Shadow covers */
+		linear-gradient(white 30%, rgba(255 255 255 / 0%)),
+		linear-gradient(rgba(255 255 255 / 0%), white 70%) 0 100%,
+		/* Shadows */
+		radial-gradient(farthest-side at 50% 0, rgba(0 0 0 / 20%), rgba(0 0 0 / 0%)),
+		radial-gradient(farthest-side at 50% 100%, rgba(0 0 0 / 20%), rgba(0 0 0 / 0%)) 0 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+
+    /* Opera doesn't support this in the shorthand */
+    background-attachment: local, local, scroll, scroll;
+}
+
+.side-nav-menu {
+    @include scroll-shadow-covers();
+
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 16px 40px 16px;
+    overflow: auto;
+    overflow-x: hidden;
+
+    &__divider {
+        border-bottom: 1px solid var(--color-grey-200);
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 180%;
+        margin-left: -15px;
+    }
+
+    /* stylelint-disable-next-line plugin/selector-bem-pattern */
+    a {
+        text-decoration: none;
+    }
+}
+
+// This makes to hide if there are more than one divider consecutive
+/* stylelint-disable-next-line selector-class-pattern */
+.side-nav-menu__divider + .side-nav-menu__divider {
+    display: none;
+}

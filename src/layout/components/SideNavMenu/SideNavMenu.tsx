@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavItems } from '../../hooks/useNavItems';
 import styles from './side-nav-menu.scss';
 import { NavBarItems } from '../../types';
 import SideNavMenuItemGroup from '../SideNavMenuItemGroup/SideNavMenuItemGroup';
@@ -8,25 +7,10 @@ import SideNavMenuItem from '../SideNavMenuItem/SideNavMenuItem';
 type Props = {
     isExpanded: boolean;
     toggleExpand?: () => void;
-};
-
-const SideNavMenu = ({ isExpanded, toggleExpand }: Props) => {
-    return (
-        <SideNavMenuApp isExpanded={isExpanded} toggleExpand={toggleExpand} />
-    );
-};
-
-type SideNavMenuListProps = {
-    isExpanded: boolean;
-    toggleExpand?: () => void;
     navItems: NavBarItems;
 };
 
-const SideNavMenuList = ({
-    isExpanded,
-    toggleExpand,
-    navItems
-}: SideNavMenuListProps) => {
+const SideNavMenu = ({ isExpanded, toggleExpand, navItems }: Props) => {
     return (
         <ul className={styles['side-nav-menu']}>
             {navItems.map((item, index) => {
@@ -58,21 +42,6 @@ const SideNavMenuList = ({
                 );
             })}
         </ul>
-    );
-};
-
-const SideNavMenuApp = ({
-    isExpanded,
-    toggleExpand
-}: Omit<SideNavMenuListProps, 'navItems'>) => {
-    const navItems = useNavItems();
-
-    return (
-        <SideNavMenuList
-            isExpanded={isExpanded}
-            toggleExpand={toggleExpand}
-            navItems={navItems}
-        />
     );
 };
 

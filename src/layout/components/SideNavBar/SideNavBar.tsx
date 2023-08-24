@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconChevronLeft, IconChevronRight, Inline } from '@7shifts/sous-chef';
 import styles from './side-nav-bar.scss';
-import { NavPosition } from '../../types';
+import { NavBarItems, NavPosition } from '../../types';
 import { isTouchscreen } from '../../util/mobileDetect';
 import { NAV_POSITION } from '../../constants';
 import SideNavMenu from '../SideNavMenu/SideNavMenu';
@@ -10,22 +10,17 @@ type Props = {
     isHovering?: boolean;
     navPosition?: NavPosition;
     toggleExpand?: () => void;
+    navItems: NavBarItems;
 };
 
 const SideNavBar = ({
     isHovering,
     navPosition = NAV_POSITION.COLLAPSED,
-    toggleExpand
+    toggleExpand,
+    navItems
 }: Props) => {
     const isExpanded = navPosition === NAV_POSITION.EXPANDED || isHovering;
     const isTouchDevice = isTouchscreen();
-
-    /* Disabling HotJar on vertical nav to check if this is causing the Chromebook issues
-    useEffect(() => {
-        const hj = getHotjar();
-        hj('event', 'vertical-nav');
-    }, []);
-    */
 
     return (
         <nav className={styles['side-nav-bar']}>
@@ -53,6 +48,7 @@ const SideNavBar = ({
             <SideNavMenu
                 isExpanded={isExpanded as boolean}
                 toggleExpand={toggleExpand}
+                navItems={navItems}
             />
         </nav>
     );

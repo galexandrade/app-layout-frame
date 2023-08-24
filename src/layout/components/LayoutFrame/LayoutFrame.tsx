@@ -4,15 +4,16 @@ import styles from './layout-frame.scss';
 import useLocalStorage from '../../util/useLocalStorage';
 import { NAV_POSITION, NAV_SIZE } from '../../constants';
 import { isTouchscreen } from '../../util/mobileDetect';
+import { NavBarItems } from '../../types';
+import SideNavBar from '../SideNavBar/SideNavBar';
+import TopBar from '../TopBar/TopBar';
 
 type Props = {
-    sideNav?: React.ReactElement;
-    topBar?: React.ReactNode;
-    isLegacyPage: boolean;
+    navItems: NavBarItems;
     children?: React.ReactNode;
 };
 
-const LayoutFrame = ({ sideNav, topBar, isLegacyPage, children }: Props) => {
+const LayoutFrame = ({ navItems, children }: Props) => {
     const navRef = useRef<HTMLDivElement>(null);
     const isFullScreen = false;
     const [isExpanded, setIsExpanded] = useLocalStorage<boolean>(
@@ -30,14 +31,10 @@ const LayoutFrame = ({ sideNav, topBar, isLegacyPage, children }: Props) => {
     };
 
     const isTouchDevice = isTouchscreen();
-    const isShowingSideMenu = !isFullScreen && sideNav;
+    const isShowingSideMenu = !isFullScreen;
 
     return (
-        <div
-            className={classNames(styles['layout-frame'], {
-                [styles['layout-frame--no-height']]: isLegacyPage
-            })}
-        >
+        <div className={styles['layout-frame']}>
             {isShowingSideMenu && (
                 <div
                     ref={navRef}
@@ -60,39 +57,32 @@ const LayoutFrame = ({ sideNav, topBar, isLegacyPage, children }: Props) => {
                                 : NAV_SIZE.COLLAPSED
                     }}
                 >
-                    {sideNav &&
-                        React.cloneElement(sideNav, {
-                            isHovering,
-                            navPosition: isExpanded
+                    <SideNavBar
+                        isHovering={isHovering}
+                        navPosition={
+                            isExpanded
                                 ? NAV_POSITION.EXPANDED
-                                : NAV_POSITION.COLLAPSED,
-                            toggleExpand,
-                            ...sideNav.props
-                        })}
+                                : NAV_POSITION.COLLAPSED
+                        }
+                        toggleExpand={toggleExpand}
+                        navItems={navItems}
+                    />
                 </div>
             )}
 
             <div
                 className={classNames(styles['layout-frame__middle-area'], {
                     [styles['layout-frame__middle-area--full-size']]:
-                        !isShowingSideMenu,
-                    [styles['layout-frame__middle-area--no-footer-padding']]:
-                        isLegacyPage
+                        !isShowingSideMenu
                 })}
             >
                 {!isFullScreen && (
-                    <div
-                        className={classNames(styles['layout-frame__top-bar'], {
-                            [styles['layout-frame__top-bar--hidden']]:
-                                isLegacyPage
-                        })}
-                    >
-                        {topBar}
+                    <div className={styles['layout-frame__top-bar']}>
+                        <TopBar />
                     </div>
                 )}
                 <div className={styles['layout-frame__content']}>
                     {children}
-                    {!isLegacyPage && <div id="footer" />}
                 </div>
             </div>
         </div>

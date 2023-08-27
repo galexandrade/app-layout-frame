@@ -17,7 +17,8 @@ import {
     IconFourDotsCircle,
     IconComment,
     DropdownList,
-    DropdownListItem
+    DropdownListItem,
+    PersistentBanner
 } from '@7shifts/sous-chef';
 import { NavBarItems } from 'app-layout-frame/dist/layout/types';
 import { Outlet } from 'react-router-dom';
@@ -138,6 +139,11 @@ function App() {
         <LayoutFrame
             navItems={NAV_ITEMS}
             appLogo={<Logo />}
+            banner={
+                <PersistentBanner>
+                    Your account is expiring in 2 days!
+                </PersistentBanner>
+            }
             companyLogoURL="https://media.istockphoto.com/id/1164466990/vector/digital-signage-pixel-icon-tech-element-vector-logo-icon-illustrator.jpg?s=612x612&w=0&k=20&c=tC_2Q7WSFbUUSDC7Nk9u-krFzDrWA4-aZjX3HI_8LoU="
             companyName="Clash Creative Marketing"
             userPrifileImageURL="https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg"

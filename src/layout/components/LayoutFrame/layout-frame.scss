@@ -8,6 +8,14 @@ $vertical-nav-size-expanded: 240px;
         height: auto;
     }
 
+    &__banner {
+        top: 0;
+        position: sticky;
+        z-index: 20;
+        width: 100vw;
+        margin-left: -72px;
+    }
+
     &__middle-area {
         width: calc(100% - $vertical-nav-size-collapsed);
         height: 100%;
@@ -37,6 +45,10 @@ $vertical-nav-size-expanded: 240px;
             ~ .layout-frame__middle-area {
                 width: calc(100% - $vertical-nav-size-expanded);
             }
+        }
+
+        &--with-banner {
+            padding-top: 45px;
         }
     }
 

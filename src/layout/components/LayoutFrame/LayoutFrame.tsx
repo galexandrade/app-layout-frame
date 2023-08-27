@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import styles from './layout-frame.scss';
 import useLocalStorage from '../../util/useLocalStorage';
@@ -16,6 +16,7 @@ type Props = {
     companyLogoURL: string;
     companyName: string;
     userPrifileImageURL: string;
+    banner?: React.ReactNode;
     children?: React.ReactNode;
 };
 
@@ -27,9 +28,19 @@ const LayoutFrame = ({
     companyName,
     userPrifileImageURL,
     accountMenuDropdown,
+    banner,
     children
 }: Props) => {
     const navRef = useRef<HTMLDivElement>(null);
+    const bannerRef = useRef<HTMLDivElement>(null);
+    const [bannerHeight, setBannerHeight] = useState(45);
+
+    useLayoutEffect(() => {
+        if (bannerRef && bannerRef.current) {
+            setBannerHeight(bannerRef.current.clientHeight);
+        }
+    });
+
     const isFullScreen = false;
     const [isExpanded, setIsExpanded] = useLocalStorage<boolean>(
         'vertical-nav-is-expanded',
@@ -57,7 +68,9 @@ const LayoutFrame = ({
                         [styles['layout-frame__side-bar--expanded']]:
                             isExpanded,
                         [styles['layout-frame__side-bar--collapsed']]:
-                            !isExpanded
+                            !isExpanded,
+                        [styles['layout-frame__side-bar--with-banner']]:
+                            !!banner
                     })}
                     onMouseEnter={() => {
                         !isTouchDevice && setIsHovering(true);
@@ -69,7 +82,8 @@ const LayoutFrame = ({
                         width:
                             isExpanded || isHovering
                                 ? NAV_SIZE.EXPANDED
-                                : NAV_SIZE.COLLAPSED
+                                : NAV_SIZE.COLLAPSED,
+                        paddingTop: !!banner ? bannerHeight : 0
                     }}
                 >
                     <SideNavBar
@@ -92,6 +106,14 @@ const LayoutFrame = ({
                         !isShowingSideMenu
                 })}
             >
+                {banner && (
+                    <div
+                        ref={bannerRef}
+                        className={classNames(styles['layout-frame__banner'])}
+                    >
+                        {banner}
+                    </div>
+                )}
                 {!isFullScreen && (
                     <div className={styles['layout-frame__top-bar']}>
                         <TopBar

@@ -1,0 +1,50 @@
+.login-layout-frame {
+    display: flex;
+
+    img {
+        width: 100%;
+        margin-top: 150px;
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        margin-top: 90px;
+
+        svg {
+            width: 80%;
+        }
+    }
+
+    &__form {
+        width: 547px;
+        height: 100vh;
+        box-sizing: border-box;
+        left: 0px;
+        top: 0px;
+        padding: 28px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__form-content {
+        flex-basis: 382px;
+        & > * {
+            height: fit-content;
+        }
+    }
+
+    &__marketing {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .login-page__form {
+        width: 100%;
+    }
+    .login-page__marketing {
+        display: none;
+    }
+}

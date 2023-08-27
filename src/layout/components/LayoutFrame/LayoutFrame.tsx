@@ -109,7 +109,10 @@ const LayoutFrame = ({
                 {banner && (
                     <div
                         ref={bannerRef}
-                        className={classNames(styles['layout-frame__banner'])}
+                        className={classNames(styles['layout-frame__banner'], {
+                            [styles['layout-frame__banner--expanded']]:
+                                isExpanded
+                        })}
                     >
                         {banner}
                     </div>

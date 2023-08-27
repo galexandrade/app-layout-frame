@@ -13,7 +13,7 @@ type Props = {
     appLogo: React.ReactNode;
     accountMenuDropdown: React.ReactNode;
     actions: React.ReactNode[];
-    companyLogoURL: string;
+    companyLogoURL?: string;
     companyName: string;
     userPrifileImageURL: string;
     banner?: React.ReactNode;

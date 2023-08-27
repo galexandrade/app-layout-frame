@@ -5,7 +5,7 @@ import styles from './top-bar.scss';
 import { Inline } from '@7shifts/sous-chef';
 
 type Props = {
-    companyLogoURL: string;
+    companyLogoURL?: string;
     companyName: string;
     actions: React.ReactNode[];
     accountMenuDropdown: React.ReactNode;

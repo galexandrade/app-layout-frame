@@ -18,9 +18,7 @@ const SideNavMenu = ({ isExpanded, toggleExpand, navItems }: Props) => {
             {filteredNavItems.map((item, index) => {
                 const isLast = index === filteredNavItems.length - 1;
                 if ('type' in item) {
-                    return isLast ? (
-                        <></>
-                    ) : (
+                    return isLast ? null : (
                         <div
                             key={index}
                             className={styles['side-nav-menu__divider']}

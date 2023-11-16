@@ -16,8 +16,11 @@ const SideNavMenu = ({ isExpanded, toggleExpand, navItems }: Props) => {
     return (
         <ul className={styles['side-nav-menu']}>
             {filteredNavItems.map((item, index) => {
+                const isLast = index === filteredNavItems.length - 1;
                 if ('type' in item) {
-                    return (
+                    return isLast ? (
+                        <></>
+                    ) : (
                         <div
                             key={index}
                             className={styles['side-nav-menu__divider']}
@@ -48,17 +51,13 @@ const SideNavMenu = ({ isExpanded, toggleExpand, navItems }: Props) => {
 };
 
 const filterItems = (navItems: NavBarItems): NavBarItems => {
-    const filtered = navItems.filter((item, index) => {
+    return navItems.filter((item, index) => {
         const isLastItem = index === navItems.length - 1;
         if ('type' in item) {
             return isLastItem ? false : true;
         }
         return item.isShowing;
     });
-    if ('type' in filtered[filtered.length - 1]) {
-        filtered.pop();
-    }
-    return filtered;
 };
 
 export default SideNavMenu;

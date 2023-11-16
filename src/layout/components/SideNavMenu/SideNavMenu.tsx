@@ -55,7 +55,7 @@ const filterItems = (navItems: NavBarItems): NavBarItems => {
         }
         return item.isShowing;
     });
-    if ('type' in filtered[length - 1]) {
+    if ('type' in filtered[filtered.length - 1]) {
         filtered.pop();
     }
     return filtered;

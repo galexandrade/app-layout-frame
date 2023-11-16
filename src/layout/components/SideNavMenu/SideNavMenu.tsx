@@ -11,9 +11,10 @@ type Props = {
 };
 
 const SideNavMenu = ({ isExpanded, toggleExpand, navItems }: Props) => {
+    const filteredNavItems = filterItems(navItems);
     return (
         <ul className={styles['side-nav-menu']}>
-            {navItems.map((item, index) => {
+            {filteredNavItems.map((item, index) => {
                 if ('type' in item) {
                     return (
                         <div
@@ -43,6 +44,16 @@ const SideNavMenu = ({ isExpanded, toggleExpand, navItems }: Props) => {
             })}
         </ul>
     );
+};
+
+const filterItems = (navItems: NavBarItems): NavBarItems => {
+    return navItems.filter((item, index) => {
+        const isLastItem = index === navItems.length - 1;
+        if ('type' in item) {
+            return isLastItem ? false : true;
+        }
+        return item.isShowing;
+    });
 };
 
 export default SideNavMenu;

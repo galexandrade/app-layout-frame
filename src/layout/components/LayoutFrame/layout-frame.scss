@@ -22,7 +22,9 @@ $vertical-nav-size-expanded: 240px;
 
     &__middle-area {
         width: calc(100% - $vertical-nav-size-collapsed);
-        height: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
         float: right;
         transition: width 0.3s;
 
@@ -50,17 +52,11 @@ $vertical-nav-size-expanded: 240px;
                 width: calc(100% - $vertical-nav-size-expanded);
             }
         }
-
-        &--with-banner {
-            padding-top: 45px;
-        }
     }
 
     &__top-bar {
         min-width: min-content;
         background-color: var(--color-white);
-        position: sticky;
-        top: 0;
         z-index: var(--z-index-nav);
 
         &--hidden {
@@ -70,5 +66,7 @@ $vertical-nav-size-expanded: 240px;
 
     &__content {
         padding-top: 40px;
+        flex: 1;
+        overflow: auto;
     }
 }

@@ -102,14 +102,16 @@ const NAV_ITEMS: NavBarItems = [
         isActive: false,
         isShowing: true,
         url: '/connections',
-        icon: IconFourDotsCircle
+        icon: IconFourDotsCircle,
+        badge: 10
     },
     {
         label: 'Queues',
         isActive: false,
         isShowing: true,
         url: '/queues',
-        icon: IconRepeat
+        icon: IconRepeat,
+        badge: 'New'
     },
     {
         label: 'API',
@@ -162,7 +164,6 @@ function App() {
                     tooltipContent="Announcements"
                     onClick={() => console.log()}
                     key={0}
-                    badge={2}
                 >
                     <IconMegaphone color="grey-400" />
                 </NavButton>,
@@ -170,7 +171,6 @@ function App() {
                     tooltipContent="Messages"
                     onClick={() => console.log()}
                     key={1}
-                    badge
                 >
                     <IconComment color="grey-400" />
                 </NavButton>

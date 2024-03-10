@@ -2,24 +2,23 @@ import React from 'react';
 import classNames from 'classnames';
 import { ReactNode } from 'react';
 import styles from './notification-badge.scss';
+import { Badge } from '@7shifts/sous-chef';
 
 type Props = {
+    isExpanded: boolean;
     children?: ReactNode;
 };
 
-const NotificationBadge = ({ children }: Props): JSX.Element => {
+const NotificationBadge = ({ isExpanded, children }: Props): JSX.Element => {
     return (
-        <span
+        <div
             className={classNames(styles['notification-badge'], {
-                [styles['notification-badge--bullet']]:
-                    typeof children === 'boolean',
-                [styles['notification-badge--count']]:
-                    typeof children === 'number'
+                [styles['notification-badge--count-expanded']]: isExpanded,
+                [styles['notification-badge--count-closed']]: !isExpanded
             })}
-            data-testid="notification-badge"
         >
-            {children}
-        </span>
+            <Badge>{children}</Badge>
+        </div>
     );
 };
 

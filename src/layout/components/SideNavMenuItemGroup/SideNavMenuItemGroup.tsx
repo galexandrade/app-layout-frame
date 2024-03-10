@@ -52,7 +52,7 @@ const SideNavMenuItemGroup = ({ isExpanded, toggleExpand, item }: Props) => {
                         <React.Fragment>
                             <Icon />
                             {(badge as number) > 0 ? (
-                                <NotificationBadge />
+                                <NotificationBadge isExpanded={isExpanded} />
                             ) : undefined}
                         </React.Fragment>
                     )}

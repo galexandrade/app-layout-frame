@@ -1,0 +1,9 @@
+.notification-bullet {
+    position: absolute;
+    min-width: 7px;
+    min-height: 7px;
+    background-color: var(--color-tangerine-400);
+    border: 1px solid var(--color-white);
+    border-radius: 10px;
+    margin: 0 0 0 -7px;
+}

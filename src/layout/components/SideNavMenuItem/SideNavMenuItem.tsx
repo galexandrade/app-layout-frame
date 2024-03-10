@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import PrimaryNavItem from '../PrimaryNavItem';
 import NotificationBadge from '../NotificationBadge';
 import { matchPath } from 'react-router';
+import { getBadgeContent } from '../../util/navDomain';
+import NotificationBullet from '../NotificationBullet';
 
 type Props = {
     isExpanded: boolean;
@@ -14,6 +16,9 @@ type Props = {
 const SideNavMenuItem = ({ isExpanded, item }: Props) => {
     const { url, label, badge } = item;
     const Icon = item.icon;
+
+    const hasChip = typeof badge === 'string' && badge !== '';
+    const hasBadge = typeof badge === 'number' && badge > 0;
 
     const isActive = !!matchPath(window.location.pathname, url);
     return (
@@ -33,9 +38,13 @@ const SideNavMenuItem = ({ isExpanded, item }: Props) => {
                 {Icon && (
                     <React.Fragment>
                         <Icon />
-                        {(badge as number) > 0 ? (
-                            <NotificationBadge />
-                        ) : undefined}
+                        {hasBadge ? (
+                            <NotificationBadge isExpanded={isExpanded}>
+                                {getBadgeContent(badge)}
+                            </NotificationBadge>
+                        ) : hasChip ? (
+                            <NotificationBullet />
+                        ) : null}
                     </React.Fragment>
                 )}
                 {isExpanded && label}

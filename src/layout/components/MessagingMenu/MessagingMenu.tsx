@@ -15,7 +15,9 @@ const MessagingMenu = (): ReactElement => {
             <div id="messaging-open" data-testid="messaging-icon">
                 <IconComment color="grey-400" />
                 {isBadged && (
-                    <NotificationBadge>{unreadMessagesCount}</NotificationBadge>
+                    <NotificationBadge isExpanded={false}>
+                        {unreadMessagesCount}
+                    </NotificationBadge>
                 )}
             </div>
         </NavButton>

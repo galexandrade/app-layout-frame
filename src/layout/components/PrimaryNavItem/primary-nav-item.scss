@@ -11,8 +11,8 @@
     box-sizing: border-box;
 
     &--active {
-        background-color: var(--color-eggplant-100);
-        color: var(--color-eggplant-500);
+        background-color: var(--color-blackberry-200);
+        color: var(--color-grey-600);
     }
 
     &:hover:not(&--active) {

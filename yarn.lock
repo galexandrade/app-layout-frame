@@ -18,6 +18,22 @@
     react-toastify "^5.5.0"
     time-autocomplete "^2.0.0-dev"
 
+"@7shifts/sous-chef@^3.45.6":
+  version "3.45.6"
+  resolved "https://registry.yarnpkg.com/@7shifts/sous-chef/-/sous-chef-3.45.6.tgz#f340e5646b9c5babe4593c5b713429d5b9e1e6f9"
+  integrity sha512-pQye0vmCAK+pDDXrkfgjkXUijSelAcS3gj6hjiy8EtVJXjnHhYVz8UbVolKXG6BLBLR0ZbN23Sr5SDJJ+J1QiQ==
+  dependencies:
+    classnames "^2.3.2"
+    date-fns "2.29.3"
+    libphonenumber-js "^1.10.36"
+    lodash-es "^4.17.15"
+    react-day-picker "^8.8.0"
+    react-modal "^3.16.1"
+    react-router-dom "5.1.2 - 6.7.0"
+    react-select "^3.1.0"
+    react-toastify "^5.5.0"
+    time-autocomplete "^2.0.0-dev"
+
 "@adobe/css-tools@^4.0.1":
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.3.1.tgz#abfccb8ca78075a2b6187345c26243c1a0842f28"

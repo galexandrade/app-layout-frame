@@ -31,7 +31,7 @@ $primary-nav-viewport-break-2: 1417px;
         font-weight: 600;
         white-space: nowrap;
         text-overflow: ellipsis;
-        max-width: 185px;
+        max-width: 285px;
         color: var(--color-grey-500);
 
         @media screen and (max-width: $viewport-mobile) {
@@ -39,7 +39,7 @@ $primary-nav-viewport-break-2: 1417px;
         }
 
         @media screen and (max-width: $primary-nav-viewport-break-2) {
-            max-width: 160px;
+            max-width: 260px;
         }
     }
 }

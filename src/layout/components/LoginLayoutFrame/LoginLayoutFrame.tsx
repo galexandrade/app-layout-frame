@@ -25,7 +25,9 @@ const LoginLayoutFrame = ({
                     <div className={styles['login-layout-frame__logo']}>
                         {logo}
                     </div>
-                    <Card>{children}</Card>
+                    <div>
+                        <Card>{children}</Card>
+                    </div>
                 </div>
             </div>
             <div className={styles['login-layout-frame__marketing']}>

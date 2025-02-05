@@ -17,7 +17,7 @@ const PrimaryNavItem = ({ as = 'li', isActive = false, children }: Props) => {
     };
 
     const content = (
-        <Inline alignItems="center" space={16} flex={['0 1 auto', '0 0 142px']}>
+        <Inline alignItems="center" space={16} flex={['0 1 auto', '0 0 145px']}>
             {children}
         </Inline>
     );

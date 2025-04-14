@@ -9,14 +9,14 @@ type Props = {
     companyName: string;
     actions: React.ReactNode[];
     accountMenuDropdown: React.ReactNode;
-    userPrifileImageURL: string;
+    userProfileImageURL: string;
 };
 const TopBar = ({
     companyLogoURL,
     companyName,
     actions,
     accountMenuDropdown,
-    userPrifileImageURL
+    userProfileImageURL
 }: Props) => {
     return (
         <div className={styles['top-bar']}>
@@ -32,7 +32,7 @@ const TopBar = ({
                 </Inline>
                 <MyAccountMenu
                     accountMenuDropdown={accountMenuDropdown}
-                    userPrifileImageURL={userPrifileImageURL}
+                    userProfileImageURL={userProfileImageURL}
                 />
             </Inline>
         </div>

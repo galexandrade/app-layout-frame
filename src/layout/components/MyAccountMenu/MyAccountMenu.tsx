@@ -4,13 +4,13 @@ import styles from './my-account-menu.scss';
 
 type Props = {
     accountMenuDropdown: React.ReactNode;
-    userPrifileImageURL: string;
+    userProfileImageURL: string;
 };
 
-const MyAccountMenu = ({ accountMenuDropdown, userPrifileImageURL }: Props) => {
+const MyAccountMenu = ({ accountMenuDropdown, userProfileImageURL }: Props) => {
     const trigger = (
         <div className={styles['my-account-menu']}>
-            <Avatar size="large" url={userPrifileImageURL} />
+            <Avatar size="large" url={userProfileImageURL} />
         </div>
     );
 

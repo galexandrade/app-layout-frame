@@ -15,7 +15,7 @@ type Props = {
     actions: React.ReactNode[];
     companyLogoURL?: string;
     companyName: string;
-    userPrifileImageURL: string;
+    userProfileImageURL: string;
     banner?: React.ReactNode;
     children?: React.ReactNode;
 };
@@ -26,7 +26,7 @@ const LayoutFrame = ({
     actions,
     companyLogoURL,
     companyName,
-    userPrifileImageURL,
+    userProfileImageURL,
     accountMenuDropdown,
     banner,
     children
@@ -102,7 +102,7 @@ const LayoutFrame = ({
                             companyLogoURL={companyLogoURL}
                             companyName={companyName}
                             actions={actions}
-                            userPrifileImageURL={userPrifileImageURL}
+                            userProfileImageURL={userProfileImageURL}
                             accountMenuDropdown={accountMenuDropdown}
                         />
                     </div>

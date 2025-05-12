@@ -41,10 +41,12 @@
 }
 
 @media (max-width: 900px) {
-    .login-page__form {
+    .login-page__form,
+    .login-layout-frame__form {
         width: 100%;
     }
-    .login-page__marketing {
+    .login-page__marketing,
+    .login-layout-frame__marketing {
         display: none;
     }
 }

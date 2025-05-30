@@ -15,7 +15,7 @@ const MyAccountMenu = ({ accountMenuDropdown, userProfileImageURL }: Props) => {
     );
 
     return (
-        <Dropdown trigger={trigger} triggersOn="hover" zIndex={6}>
+        <Dropdown trigger={trigger} triggersOn="hover" zIndex={8}>
             {accountMenuDropdown}
         </Dropdown>
     );

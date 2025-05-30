@@ -107,7 +107,10 @@ const LayoutFrame = ({
                         />
                     </div>
                 )}
-                <div className={styles['layout-frame__content']}>
+                <div
+                    className={styles['layout-frame__content']}
+                    data-id="layout-frame-content"
+                >
                     {children}
                 </div>
             </div>

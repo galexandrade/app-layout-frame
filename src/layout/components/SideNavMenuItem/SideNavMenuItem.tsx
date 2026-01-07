@@ -14,7 +14,7 @@ type Props = {
 };
 
 const SideNavMenuItem = ({ isExpanded, item }: Props) => {
-    const { url, label, badge } = item;
+    const { url, label, badge, badgeType = 'bullet' } = item;
     const Icon = item.icon;
 
     const hasChip = typeof badge === 'string' && badge !== '';
@@ -38,13 +38,19 @@ const SideNavMenuItem = ({ isExpanded, item }: Props) => {
                 {Icon && (
                     <React.Fragment>
                         <Icon />
-                        {hasBadge ? (
+                        {hasBadge && (
                             <NotificationBadge isExpanded={isExpanded}>
                                 {getBadgeContent(badge)}
                             </NotificationBadge>
-                        ) : hasChip ? (
+                        )}{' '}
+                        {hasChip && badgeType === 'badge' && (
+                            <NotificationBadge isExpanded={isExpanded}>
+                                {badge}
+                            </NotificationBadge>
+                        )}
+                        {hasChip && badgeType === 'bullet' && (
                             <NotificationBullet />
-                        ) : null}
+                        )}
                     </React.Fragment>
                 )}
                 {isExpanded && label}

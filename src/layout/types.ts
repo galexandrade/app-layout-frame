@@ -6,6 +6,7 @@ export type NavBarItem = {
     isShowing: boolean;
     isPaywalled?: boolean;
     badge?: string | number;
+    badgeType?: 'bullet' | 'badge';
     onClick?: () => void;
 };
 

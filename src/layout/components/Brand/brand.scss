@@ -32,7 +32,7 @@ $primary-nav-viewport-break-2: 1417px;
         white-space: nowrap;
         text-overflow: ellipsis;
         max-width: 285px;
-        color: var(--color-grey-500);
+        color: var(--color-surface-on-color);
 
         @media screen and (max-width: $viewport-mobile) {
             display: none;

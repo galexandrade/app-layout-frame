@@ -1,6 +1,6 @@
 {
     "name": "app-layout-frame",
-    "version": "0.0.52",
+    "version": "0.0.55",
     "description": "Easily layout your webapp with sidenav and topbar",
     "author": "galexandrade",
     "license": "MIT",
@@ -62,7 +62,7 @@
         "dist"
     ],
     "dependencies": {
-        "@7shifts/sous-chef": "^3.87.1",
+        "@7shifts/sous-chef": "3.87.2-beta.0",
         "app-layout-frame": "^0.0.1",
         "classnames": "^2.3.2"
     }

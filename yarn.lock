@@ -2,6 +2,22 @@
 # yarn lockfile v1
 
 
+"@7shifts/sous-chef@3.87.2-beta.0":
+  version "3.87.2-beta.0"
+  resolved "https://registry.yarnpkg.com/@7shifts/sous-chef/-/sous-chef-3.87.2-beta.0.tgz#9a5d5f33e19013b86485aedd56c14736905300c0"
+  integrity sha512-mgfPjARfbSxV4rbe3Olhdg+wHrXNvkvVXuuqn7iG93dFN4GOkPSvpfq2CbGAi1Brs9CTvjy4eKdAgdb0lffuCw==
+  dependencies:
+    classnames "^2.3.2"
+    date-fns "2.29.3"
+    libphonenumber-js "^1.10.36"
+    lodash-es "^4.17.15"
+    react-day-picker "^8.8.0"
+    react-modal "^3.16.1"
+    react-router-dom "5.1.2 - 6.7.0"
+    react-select "^5.10.0"
+    react-toastify "^5.5.0"
+    time-autocomplete "^2.0.0-dev"
+
 "@7shifts/sous-chef@^3.23.0":
   version "3.23.0"
   resolved "https://registry.yarnpkg.com/@7shifts/sous-chef/-/sous-chef-3.23.0.tgz#9dd250680ae94d042cee7b4f2f713e702f1f2071"
@@ -15,22 +31,6 @@
     react-modal "^3.16.1"
     react-router-dom "5.1.2 - 6.7.0"
     react-select "^3.1.0"
-    react-toastify "^5.5.0"
-    time-autocomplete "^2.0.0-dev"
-
-"@7shifts/sous-chef@^3.87.1":
-  version "3.87.1"
-  resolved "https://registry.yarnpkg.com/@7shifts/sous-chef/-/sous-chef-3.87.1.tgz#844f3a2dffba0a46ce66087b0fcf56351c8da174"
-  integrity sha512-XuhJfKawxO1ZGv+pwFaBZGdaOb1LhZgOT+DDBDPi9Zzc2IYLB9HPU45C6+kSAIkFBr+A4SGY8W8qhnyEj7zRpw==
-  dependencies:
-    classnames "^2.3.2"
-    date-fns "2.29.3"
-    libphonenumber-js "^1.10.36"
-    lodash-es "^4.17.15"
-    react-day-picker "^8.8.0"
-    react-modal "^3.16.1"
-    react-router-dom "5.1.2 - 6.7.0"
-    react-select "^5.10.0"
     react-toastify "^5.5.0"
     time-autocomplete "^2.0.0-dev"
 

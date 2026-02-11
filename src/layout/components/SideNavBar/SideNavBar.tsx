@@ -1,5 +1,10 @@
 import React from 'react';
-import { IconChevronLeft, IconChevronRight, Inline } from '@7shifts/sous-chef';
+import {
+    COLORS,
+    IconChevronLeft,
+    IconChevronRight,
+    Inline
+} from '@7shifts/sous-chef';
 import styles from './side-nav-bar.scss';
 import { NavBarItems, NavPosition } from '../../types';
 import { isTouchscreen } from '../../util/mobileDetect';
@@ -39,9 +44,13 @@ const SideNavBar = ({
                             className={styles['side-nav-bar__nav-toggle']}
                         >
                             {navPosition === NAV_POSITION.COLLAPSED ? (
-                                <IconChevronRight />
+                                <IconChevronRight
+                                    color={COLORS['surface-on-color']}
+                                />
                             ) : (
-                                <IconChevronLeft />
+                                <IconChevronLeft
+                                    color={COLORS['surface-on-color']}
+                                />
                             )}
                         </button>
                     )}

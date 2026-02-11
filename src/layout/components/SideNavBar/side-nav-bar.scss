@@ -3,15 +3,15 @@
     height: 100%;
     padding-top: 0;
     box-sizing: border-box;
-    color: var(--color-grey-500);
-    border-right: 1px solid var(--color-grey-200);
+    color: var(--color-surface-on-color);
+    border-right: 1px solid var(--color-outline);
     box-shadow: rgba(0 0 0 / 15%) 0 5px 15px 0;
     display: flex;
     flex-direction: column;
 
     &__header {
         padding: 16px;
-        background-color: white;
+        background-color: var(--color-surface-container);
         padding-bottom: 16px;
     }
 
@@ -35,7 +35,7 @@
         border: none;
 
         &:hover {
-            background-color: var(--color-grey-100);
+            background-color: var(--color-surface-container-high);
         }
     }
 }

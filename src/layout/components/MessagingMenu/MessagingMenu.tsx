@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ReactElement } from 'react';
-import { IconComment } from '@7shifts/sous-chef';
+import { COLORS, IconComment } from '@7shifts/sous-chef';
 import NavButton from '../NavButton';
 import NotificationBadge from '../NotificationBadge';
 const MessagingMenu = (): ReactElement => {
@@ -13,7 +13,7 @@ const MessagingMenu = (): ReactElement => {
     return (
         <NavButton tooltipContent="Messages" onClick={() => onClick()}>
             <div id="messaging-open" data-testid="messaging-icon">
-                <IconComment color="grey-400" />
+                <IconComment color={COLORS['surface-on-color-subtle']} />
                 {isBadged && (
                     <NotificationBadge isExpanded={false}>
                         {unreadMessagesCount}

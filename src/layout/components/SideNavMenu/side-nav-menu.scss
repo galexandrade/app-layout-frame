@@ -11,8 +11,8 @@
     // prettier-ignore
     background:
 		/* Shadow covers */
-		linear-gradient(white 30%, rgba(255 255 255 / 0%)),
-		linear-gradient(rgba(255 255 255 / 0%), white 70%) 0 100%,
+		linear-gradient(var(--color-surface-container) 30%, rgba(255 255 255 / 0%)),
+		linear-gradient(rgba(255 255 255 / 0%), var(--color-surface-container) 70%) 0 100%,
 		/* Shadows */
 		radial-gradient(50% 0, farthest-side, rgba(0 0 0 / 20%), rgba(0 0 0 / 0%)),
 		radial-gradient(50% 100%, farthest-side, rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)) 0 100%;
@@ -20,13 +20,13 @@
     // prettier-ignore
     background:
 		/* Shadow covers */
-		linear-gradient(white 30%, rgba(255 255 255 / 0%)),
-		linear-gradient(rgba(255 255 255 / 0%), white 70%) 0 100%,
+		linear-gradient(var(--color-surface-container) 30%, rgba(255 255 255 / 0%)),
+		linear-gradient(rgba(255 255 255 / 0%), var(--color-surface-container) 70%) 0 100%,
 		/* Shadows */
 		radial-gradient(farthest-side at 50% 0, rgba(0 0 0 / 20%), rgba(0 0 0 / 0%)),
 		radial-gradient(farthest-side at 50% 100%, rgba(0 0 0 / 20%), rgba(0 0 0 / 0%)) 0 100%;
     background-repeat: no-repeat;
-    background-color: white;
+    background-color: var(--color-surface-container);
     background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
 
     /* Opera doesn't support this in the shorthand */
@@ -45,7 +45,7 @@
     overflow-x: hidden;
 
     &__divider {
-        border-bottom: 1px solid var(--color-grey-200);
+        border-bottom: 1px solid var(--color-outline);
         margin-top: 12px;
         margin-bottom: 12px;
         width: 180%;

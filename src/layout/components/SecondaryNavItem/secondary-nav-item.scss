@@ -1,7 +1,7 @@
 .secondary-nav-item {
     padding: 5px 0;
     padding-left: 22px;
-    color: var(--color-grey-500);
+    color: var(--color-surface-on-color-bold);
     display: flex;
     gap: 8px;
     align-items: center;
@@ -11,7 +11,7 @@
     box-sizing: border-box;
 
     &--active {
-        color: var(--color-blackberry-500);
+        color: var(--color-surface-on-color-bold);
         font-weight: 600;
 
         // compensates for the width gained the font-weight bold in the active state preventing text wrap changes
@@ -23,7 +23,7 @@
     }
 
     &:hover:not(&--active) {
-        color: var(--color-tangerine-500);
+        color: var(--color-primary-color);
     }
 
     &__content {
